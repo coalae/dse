@@ -1,0 +1,53 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+        $('#userlist').click(function () {
+        	$.ajax({
+    			   url: 'http://tomcat01lab.cs.univie.ac.at:31811/DSE/users/userlist',
+    			   type: 'GET',
+    			   dataType: 'json',
+    			   //data: ''
+    			   success: function(data) {
+               $.each(data, function(i, item) {
+                 $('#output').append('<div class="a"> name: ' + item.username + '<br/> password:'+item.password +'</div>');
+               });
+               //console.log(data);
+             }
+			     });
+
+        });
+
+
+        $('#todolist').click(function () {
+        	$.ajax({
+    			         url: 'http://tomcat01lab.cs.univie.ac.at:31811/ToDoListTestServer/todolist/todolistPerUser?userId=1',
+    			          type: 'GET',
+    			          dataType: 'json',
+    			          //data: ''
+    			          success: function(data) {
+                        $.each(data, function(i, item) {
+                          $('#output').append('<div class="a"> category: ' + item.category + '<br/> todoname:'+item.toDoName +'</div>');
+                        });
+                        //console.log(data);
+                      }
+                    });
+        });
+});
+
+</script>
+</head>
+
+<body>
+<button type="submit" id="userlist">User List</button>
+<button type="submit" id="todolist">TODO List</button>
+
+
+<div id="output">
+
+</div>
+
+
+</body>
+</html>

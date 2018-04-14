@@ -1,0 +1,125 @@
+
+.flat-form {
+  background: #e74c3c;
+  color: white;
+  margin: 25px auto;
+  width: 390px;
+  position: relative;
+  .tabs {
+    display: block;
+    background: #c0392b;
+    width: 100%;
+    height: 43px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style-type: none;
+    li {
+      display: block;
+      margin: 0;
+      padding: 0;
+      float: left;
+      cursor: pointer;
+      a {
+        display: block;
+        background: #c0392b;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        float: left;
+        padding: 12px 22px;
+        &.active {
+          background: #e74c3c;
+          border-right: none;
+        }
+        &:hover {
+          background: lighten(#c0392b, 10%);
+        }
+      }
+      &:last-child a {
+        text-align: center;
+        width: 174px;
+        padding-left: 0;
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+  .form-action {
+    padding: 0 20px 20px 0;
+    position: relative;
+    & .login-header {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      & img {
+        height: 150px;
+      }
+    }
+    & .login-title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  form {
+    padding-right: 20px !important;
+    & ul {
+      list-style-type: none;
+    }
+    input {
+      &[type=text],
+      &[type=password],
+      &[type=text],
+      &[type=password] {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        padding-left: 15px;
+        background: #fff;
+        border: none;
+        color: #e74c3c;
+        outline: none;
+      }
+      &.button {
+        border: none;
+        display: block;
+        background: #136899;
+        height: 40px;
+        width: 80px;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 3px 1px #2075aa;
+        cursor: pointer;
+        &:hover {
+          background: #1e75aa;
+          box-shadow: 0 3px 1px #237bb2;
+        }
+        &:active {
+          background: #136899;
+          box-shadow: 0 3px 1px #0f608c;
+        }
+      }
+      $placeholder-color: #e74c3c;
+      &::-webkit-input-placeholder {
+        color: $placeholder-color;
+      }
+      &:-moz-placeholder {
+        color: $placeholder-color;
+      }
+      &::-moz-placeholder {
+        color: $placeholder-color;
+      }
+      &:-ms-input-placeholder {
+        color: $placeholder-color;
+      }
+    }
+  }
+  .show {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
+}
